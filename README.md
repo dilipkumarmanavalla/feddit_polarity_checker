@@ -61,3 +61,29 @@ Additional hints
 Keep in mind that we will be focusing on the engineering aspects of the task, so you are not required to build a ML model from scratch. If you prefer, you can use an external API for the ML model.
 
 We are expecting to be able to run the code.
+
+# Task Solution Info
+## Structure
+Created a "polarity_check" folder with the following structure:
+
+- main.py: Contains all code related to API creation and polarity logic.
+- app (sub-folder): Contains meta-information files like models.py and views.py.
+- requirements.txt: Includes all packages required for the application to work.
+- Dockerfile: Facilitates easier deployment and ensures environment independence.
+## Solution
+- Utilized FastAPI for creating the REST APIs.
+- Developed custom logic for polarity analysis, capable of handling cross-functional API calls to meet the requirements.
+- Leveraged Python packages for generating polarity scores for comment text:
+- Experimented with NLTK and TextBlob packages; ultimately, NLTK performed better with our text data, thus chosen.
+- Aimed to simplify setup and utilization of this microservice by using Docker, making the project independent. Integrated it into the existing docker-compose.yml for easy service startup.
+- Note: Alternative packages or models can be substituted to replace the sentiment analysis logic.
+- Note: The sentiment analysis logic can also be replaced by making API calls to a model.
+
+## Steps For Starting the Services
+- Ensure Docker is installed and the repository is cloned.
+- Build all required containers from images using the command: docker-compose -f .\docker-compose.yml build.
+- Start all required containers with the command: docker-compose -f .\docker-compose.yml up.
+- polarity_check_api without using Docker
+  - Install All the Dependencies: pip install -r polarity_check_api/requirements.txt
+  - Download Vader lexicon for SentimentIntensityAnalyzer: python -c "import nltk; nltk.download('vader_lexicon')"
+  - Start a web server using Uvicorn: uvicorn main:app --host 0.0.0.0 --port 5050
