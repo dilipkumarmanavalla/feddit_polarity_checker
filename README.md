@@ -64,7 +64,7 @@ We are expecting to be able to run the code.
 
 # Task Solution Info
 ## Structure
-Created a "polarity_check" folder with the following structure:
+Created a "polarity_check_api" folder with the following structure:
 
 - main.py: Contains all code related to API creation and polarity logic.
 - app (sub-folder): Contains meta-information files like models.py and views.py.
