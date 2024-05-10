@@ -41,11 +41,11 @@ services:
       - fedd_it
     depends_on:
       - db
-  polarity_check:
+  polarity_check_api:
     build:
-      context: ./polarity_check
+      context: ./polarity_check_api
       dockerfile: Dockerfile
-    container_name: "polarity_check"
+    container_name: "polarity_check_api"
     ports:
       - "5050:5050"
     expose:
