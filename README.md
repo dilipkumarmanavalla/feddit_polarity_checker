@@ -87,3 +87,4 @@ Created a "polarity_check_api" folder with the following structure:
   - Install All the Dependencies: pip install -r polarity_check_api/requirements.txt
   - Download Vader lexicon for SentimentIntensityAnalyzer: python -c "import nltk; nltk.download('vader_lexicon')"
   - Start a web server using Uvicorn: uvicorn main:app --host 0.0.0.0 --port 5050
+- Can use tester.py file for sample api call and testing manually
